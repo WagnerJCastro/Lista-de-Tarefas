@@ -16,6 +16,4 @@ COPY --from=build /target/todolist-1.0.0.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-LABEL authors="wajoc"
-
-ENTRYPOINT ["top", "-b"]
+LABEL authors="WJCastro"
