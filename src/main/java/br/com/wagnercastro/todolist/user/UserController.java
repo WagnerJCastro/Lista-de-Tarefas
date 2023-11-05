@@ -1,13 +1,15 @@
 package br.com.wagnercastro.todolist.user;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import br.com.wagnercastro.todolist.tasks.TaskModel;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
 
 /**Controller é um componente utilizado para ser a primeira camada de acesso
  entre a requisição do usuario e as demais camadas como negocios ou bd.
@@ -46,7 +48,10 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuario salvo com sucesso!\n" + userCreated);
     }
 
-
+    @GetMapping("/bemvindo")
+    public String bemvindo(){
+        return "Olá, seja bem vindo!";
+    }
 
 
 }
